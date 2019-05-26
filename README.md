@@ -9,5 +9,7 @@ N-Tier Layered Architecture
   - Creating Business Layer
   - Creating Business Unit Test Layer
   - Creating Web UI Layer
+  - Creating Web UI Unit Test Layer
   - Creating Web Api Layer
+  - Creating Web Api Unit Test Layer
   - Creating WCF Layer
