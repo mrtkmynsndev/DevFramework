@@ -8,7 +8,7 @@ using DevFramework.Core.Entities;
 
 namespace DevFramework.Core.DataAccess
 {
-    interface IEntityRepository<T> where T: class, IEntity, new()
+    public interface IEntityRepository<T> where T: class, IEntity, new()
     {
         T Add(T entity);
         T Update(T entity);
