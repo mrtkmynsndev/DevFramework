@@ -13,3 +13,10 @@ N-Tier Layered Architecture
   - Creating Web Api Layer
   - Creating Web Api Unit Test Layer
   - Creating WCF Layer
+  
+1. Core Layer
+
+- DataAccess
+   - Generic Repository Implementation
+   - Entityframework Implementation
+   - NHibernate Implementation
