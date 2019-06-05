@@ -28,7 +28,7 @@ namespace DevFramework.Core.DataAccess.NHibernate
         /// <returns></returns>
         public virtual ISession OpenSession()
         {
-            return _sessionFactory.OpenSession();
+            return SessionFactory.OpenSession();
         }
 
         public void Dispose()

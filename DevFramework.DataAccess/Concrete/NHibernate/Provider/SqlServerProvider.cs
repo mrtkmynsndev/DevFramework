@@ -14,7 +14,7 @@ namespace DevFramework.DataAccess.Concrete.NHibernate.Provider
     {
         protected override ISessionFactory InitializeFactory()
         {
-            return Fluently.Configure().Database(MsSqlConfiguration.MsSql2012.ConnectionString(c => c.FromConnectionStringWithKey("NorthwindContext")))
+            return Fluently.Configure().Database(MsSqlConfiguration.MsSql7.ConnectionString(c => c.FromConnectionStringWithKey("NorthwindContext")))
                 .Mappings(m => m.FluentMappings.AddFromAssembly(System.Reflection.Assembly.GetExecutingAssembly())) //Found Mapping from DataAccess Layer
                 .BuildSessionFactory();
         }
