@@ -8,6 +8,7 @@ N-Tier Layered Architecture RoadMap
   - Creating DataAccess Unit Test Layer
   - Creating Business Layer
   - Creating Business Unit Test Layer
+  - Creating Entities Layer
   - Creating Web UI Layer
   - Creating Web UI Unit Test Layer
   - Creating Web Api Layer
@@ -35,3 +36,9 @@ N-Tier Layered Architecture RoadMap
 3. DataAccess Test Layer
    - EntityFramework Data Access Unit Test Scenario Implementation
    - NHibernate Data Access Unit Test Scenario Implementation
+   
+4. Business Layer
+
+5. Entities Layer
+   - Complex Type Implementation
+   - Concrete Implementation
