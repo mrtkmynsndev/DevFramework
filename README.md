@@ -25,6 +25,9 @@ N-Tier Layered Architecture RoadMap
    - Entity Implementation
    - Auditable Entity Implementation
    - Specification Entity Implementation
+ - Cross Cutting Concerns
+   - Fluent Validation Implementation
+   
    
 2. DataAccess Layer
    - EntityFramework Dal Implementation
@@ -38,6 +41,8 @@ N-Tier Layered Architecture RoadMap
    - NHibernate Data Access Unit Test Scenario Implementation
    
 4. Business Layer
+- Validation Rules
+   - Fluent Validation Validator Rules Implementation
 
 5. Entities Layer
    - Complex Type Implementation
