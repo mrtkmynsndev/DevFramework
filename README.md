@@ -27,6 +27,8 @@ N-Tier Layered Architecture RoadMap
    - Specification Entity Implementation
  - Cross Cutting Concerns
    - Fluent Validation Implementation
+- Aspect Oriented Programming - Aspects
+   - Postsharp Implementation
    
    
 2. DataAccess Layer
@@ -42,7 +44,11 @@ N-Tier Layered Architecture RoadMap
    
 4. Business Layer
 - Validation Rules
-   - Fluent Validation Validator Rules Implementation
+   - Fluent Validation Validator Rules Implementation  
+   
+5. Business Test Layer
+   - Moq Framework Implementation
+   - Managers Business Unit Test Scenario Implementation   
 
 5. Entities Layer
    - Complex Type Implementation
