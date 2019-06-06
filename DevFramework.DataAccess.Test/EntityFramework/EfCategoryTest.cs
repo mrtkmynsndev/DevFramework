@@ -1,13 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DevFramework.DataAccess.Concrete.EntityFramework;
+using DevFramework.DataAccess.Abstract;
 
 namespace DevFramework.DataAccess.Test.EntityFramework
 {
     [TestClass]
     public class EfCategoryTest
     {
-        EfCategoryDal _efCategoryDal;
+        ICategoryDal _efCategoryDal;
 
         [TestInitialize]
         public void Start()

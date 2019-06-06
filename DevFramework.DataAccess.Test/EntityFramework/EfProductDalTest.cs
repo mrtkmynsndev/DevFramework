@@ -93,6 +93,19 @@ namespace DevFramework.DataAccess.Test.EntityFramework
 
             //Assert
         }
+
+        [TestMethod]
+        public void Get_all_product_detail()
+        {
+            //Arrange
+            var expectedValue = 77;
+
+            //Actual
+            var productDetails = _productDal.GetProductDetails();
+
+            //Asserts
+            Assert.AreEqual(expectedValue, productDetails.Count);
+        }
     }
 }
 

@@ -2,13 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DevFramework.DataAccess.Concrete.NHibernate;
 using DevFramework.DataAccess.Concrete.NHibernate.Provider;
+using DevFramework.DataAccess.Abstract;
 
 namespace DevFramework.DataAccess.Test.NHibernate
 {
     [TestClass]
     public class NhCategoryDalTest
     {
-        NhCategoryDal _nhCategoryDal;
+        ICategoryDal _nhCategoryDal;
 
         [TestInitialize]
         public void Start()
