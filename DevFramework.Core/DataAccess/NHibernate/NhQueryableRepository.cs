@@ -20,6 +20,7 @@ namespace DevFramework.Core.DataAccess.NHibernate
         public IQueryable<T> Table => this.Entites;
 
         public IQueryable<T> Entites {
+
             get
             {
                 if(_entites == null)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Core.Entities.Base
 {
-    public interface IBaseEntity<T>
+    public interface ISpecificationEntity<T> : IEntity
     {
         T Id { get; set; }
     }

@@ -70,7 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFramework\EfProductDalTest.cs" />
+    <Compile Include="EntityFramework\EfCategoryTest.cs" />
     <Compile Include="NHibernate\NhProductDalTest.cs" />
+    <Compile Include="NHibernate\NhCategoryDalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

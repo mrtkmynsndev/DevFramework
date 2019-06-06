@@ -80,7 +80,7 @@
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\Entity.cs" />
     <Compile Include="Entities\Base\IAuditableEntity.cs" />
-    <Compile Include="Entities\Base\IBaseEntity.cs" />
+    <Compile Include="Entities\Base\ISpecificationEntity.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Core.Entities.Base
 {
-    public abstract class Entity<T> : BaseEntity, IBaseEntity<T>
+    public abstract class Entity<T> : ISpecificationEntity<T>
     {
         public virtual T Id { get; set; }
     }

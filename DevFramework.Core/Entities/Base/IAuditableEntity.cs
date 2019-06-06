@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Core.Entities.Base
 {
-    public interface IAuditableEntity
+    public interface IAuditableEntity : IEntity
     {
         DateTime CreatedDate { get; set; }
         string CreatedBy { get; set; }

@@ -11,7 +11,7 @@ namespace DevFramework.Core.DataAccess.NHibernate
     {
         static ISessionFactory _sessionFactory;
         
-        public virtual ISessionFactory SessionFactory
+        public virtual ISessionFactory SessionFactory //There is a sesssion logic. Factory Design Pattern
         {
             get => _sessionFactory ?? (_sessionFactory = InitializeFactory());
         }
