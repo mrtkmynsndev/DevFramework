@@ -41,7 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Concrete\Managers\IProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DevFramework.Core\DevFramework.Core.csproj">
+      <Project>{0bb2f9b5-d490-4b3c-8869-20bc4858e353}</Project>
+      <Name>DevFramework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DevFramework.DataAccess\DevFramework.DataAccess.csproj">
+      <Project>{dee5e59e-4556-41cf-8e1a-cb89c8c07954}</Project>
+      <Name>DevFramework.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DevFramework.Entities\DevFramework.Entities.csproj">
+      <Project>{8dd6a6ca-251f-49ac-a8fc-626d39df471b}</Project>
+      <Name>DevFramework.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
