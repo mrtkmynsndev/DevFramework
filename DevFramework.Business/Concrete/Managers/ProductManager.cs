@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 using DevFramework.Business.Abstract;
 using DevFramework.Entities.Concrete;
 using DevFramework.DataAccess.Abstract;
-using DevFramework.DataAccess.Concrete.EntityFramework;
+using DevFramework.Core.CrossCuttingConcerns.FluentValidation;
+using DevFramework.Business.ValidationRules.FluentValidation;
 
 namespace DevFramework.Business.Concrete.Managers
 {
-    public class IProductManager : IProductService
+    public class ProductManager : IProductService
     {
         IProductDal _productDal;
-        public IProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
         }
 
         public Product Add(Product entity)
         {
+            ValidatorTool.FluentValidate(new ProductValidator(), entity: entity);
+
             return _productDal.Add(entity);
         }
 
