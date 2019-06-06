@@ -8,6 +8,7 @@ using DevFramework.Entities.Concrete;
 using DevFramework.DataAccess.Abstract;
 using DevFramework.Core.CrossCuttingConcerns.FluentValidation;
 using DevFramework.Business.ValidationRules.FluentValidation;
+using DevFramework.Core.Aspects.Postsharp;
 
 namespace DevFramework.Business.Concrete.Managers
 {
@@ -19,9 +20,10 @@ namespace DevFramework.Business.Concrete.Managers
             _productDal = productDal;
         }
 
+        [FluentValidationAspect(typeof(ProductValidator), AspectPriority =1)]
         public Product Add(Product entity)
         {
-            ValidatorTool.FluentValidate(new ProductValidator(), entity: entity);
+            //ValidatorTool.FluentValidate(new ProductValidator(), entity: entity);
 
             return _productDal.Add(entity);
         }
