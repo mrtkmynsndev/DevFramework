@@ -28,7 +28,8 @@ N-Tier Layered Architecture RoadMap
  - Cross Cutting Concerns
    - Fluent Validation Implementation
 - Aspect Oriented Programming - Aspects
-   - Postsharp Implementation
+   - Validation Aspect Implementation
+   - Transaction Aspect Implementation
    
    
 2. DataAccess Layer
