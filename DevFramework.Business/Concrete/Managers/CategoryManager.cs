@@ -9,6 +9,7 @@ using DevFramework.Entities.Concrete;
 using DevFramework.DataAccess.Abstract;
 using DevFramework.Core.Aspects.Postsharp;
 using DevFramework.Business.ValidationRules.FluentValidation;
+using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 
 namespace DevFramework.Business.Concrete.Managers
 {

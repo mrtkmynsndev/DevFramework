@@ -70,6 +70,7 @@
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Concrete\Managers\CategoryManager.cs" />
     <Compile Include="Concrete\Managers\ProductManager.cs" />
+    <Compile Include="DependencyResolver\Autofac\AutofacConfig.cs" />
     <Compile Include="DependencyResolver\Autofac\BusinessModule.cs" />
     <Compile Include="DependencyResolver\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolver\Ninject\ValidationModule.cs" />
