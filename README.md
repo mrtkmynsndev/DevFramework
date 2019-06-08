@@ -48,6 +48,7 @@ N-Tier Layered Architecture RoadMap
    - Fluent Validation Validator Rules Implementation  
 - Dependency Resolver
    - Ninject Module Implementation  
+   - Autofac Module Implementation
    
 5. Business Test Layer
    - Moq Framework Implementation
