@@ -12,5 +12,6 @@ namespace DevFramework.Business.Abstract
         List<Product> GetProducts();
         Product GetProductByID(int id);
         Product Add(Product entity);
+        void TransactionalOperation(Product product, Product product2);
     }
 }

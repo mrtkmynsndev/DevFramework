@@ -9,6 +9,9 @@ using DevFramework.DataAccess.Abstract;
 using DevFramework.Core.CrossCuttingConcerns.FluentValidation;
 using DevFramework.Business.ValidationRules.FluentValidation;
 using DevFramework.Core.Aspects.Postsharp;
+using System.Transactions;
+using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
+using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 
 namespace DevFramework.Business.Concrete.Managers
 {
@@ -36,6 +39,14 @@ namespace DevFramework.Business.Concrete.Managers
         public List<Product> GetProducts()
         {
             return _productDal.GetList();
+        }
+
+        [TransactionalScopeAspect]
+        public void TransactionalOperation(Product product, Product product2)
+        {
+            _productDal.Add(product);
+            //some business code here
+            _productDal.Add(product2);
         }
     }
 }
