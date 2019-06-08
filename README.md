@@ -27,9 +27,11 @@ N-Tier Layered Architecture RoadMap
    - Specification Entity Implementation
  - Cross Cutting Concerns
    - Fluent Validation Implementation
+   - Microsoft Memory Cache Implementation
 - Aspect Oriented Programming - Aspects
    - Validation Aspect Implementation
    - Transaction Aspect Implementation
+   - Cache Aspect Implementation
    
    
 2. DataAccess Layer
