@@ -17,9 +17,9 @@ namespace DevFramework.Core.Aspects.Postsharp.CacheAspects
         Type _cacheType;
         ICacheManager _cacheManager;
 
-        public CacheRemoveAsepect()
+        public CacheRemoveAsepect(Type cacheType)
         {
-
+            _cacheType = cacheType;
         }
 
         public CacheRemoveAsepect(Type cacheType, string pattern)

@@ -12,6 +12,8 @@ using DevFramework.Core.Aspects.Postsharp;
 using System.Transactions;
 using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
+using DevFramework.Core.Aspects.Postsharp.CacheAspects;
+using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 
 namespace DevFramework.Business.Concrete.Managers
 {
@@ -24,6 +26,7 @@ namespace DevFramework.Business.Concrete.Managers
         }
 
         [FluentValidationAspect(typeof(ProductValidator), AspectPriority =1)]
+        [CacheRemoveAsepect(typeof(MemoryCacheManager))]
         public Product Add(Product entity)
         {
             //ValidatorTool.FluentValidate(new ProductValidator(), entity: entity);
@@ -36,6 +39,7 @@ namespace DevFramework.Business.Concrete.Managers
             return _productDal.Get(x => x.ProductId == id);
         }
 
+        [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetProducts()
         {
             return _productDal.GetList();
