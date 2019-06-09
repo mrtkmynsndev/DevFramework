@@ -28,11 +28,12 @@ N-Tier Layered Architecture RoadMap
  - Cross Cutting Concerns
    - Fluent Validation Implementation
    - Microsoft Memory Cache Implementation
+   - Log4Net Implementation
 - Aspect Oriented Programming - Aspects
    - Validation Aspect Implementation
    - Transaction Aspect Implementation
    - Cache Aspect Implementation
-   
+   - Log Aspect Implementation
    
 2. DataAccess Layer
    - EntityFramework Dal Implementation
