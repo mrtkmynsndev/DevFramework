@@ -7,13 +7,16 @@ using PostSharp.Aspects;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net;
 using System.Reflection;
 using DevFramework.Core.CrossCuttingConcerns.Logging;
+using PostSharp.Extensibility;
 
 namespace DevFramework.Core.Aspects.Postsharp.LogAspects
 {
+    [Serializable]
+    [MulticastAttributeUsage(MulticastTargets.Method, TargetMemberAttributes = MulticastAttributes.Instance)]
     public class LogAspect : OnMethodBoundaryAspect
     {
-        LoggerService _loggerService;
-        Type _loggerType;
+        private LoggerService _loggerService;
+        private Type _loggerType;
 
         public LogAspect(Type loggerType)
         {
@@ -22,8 +25,9 @@ namespace DevFramework.Core.Aspects.Postsharp.LogAspects
 
         public override void RuntimeInitialize(MethodBase method)
         {
-            if (!_loggerType.IsAssignableFrom(typeof(LoggerService)))
-                throw new Exception("Invalid Logger Type");
+
+            if (_loggerType.BaseType != typeof(LoggerService))
+                throw new Exception($"Invalid Logger Type: " + _loggerType.Name);
 
             _loggerService = (LoggerService)Activator.CreateInstance(_loggerType);
 

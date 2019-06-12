@@ -21,7 +21,7 @@ namespace DevFramework.Business.Concrete.Managers
 {
     public class ProductManager : IProductService
     {
-        IProductDal _productDal;
+        private IProductDal _productDal;
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
