@@ -1,4 +1,5 @@
 ﻿using DevFramework.Business.Abstract;
+using DevFramework.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,18 @@ namespace DevFramework.MvcWebUI.Controllers
             };
 
             return View(model);
+        }
+
+        public ActionResult Add()
+        {
+            var entity = new Product()
+            {
+                ProductName = "Laptop",
+            };
+
+            _productService.Add(entity);
+
+            return Json("Added", JsonRequestBehavior.AllowGet);
         }
     }
 }

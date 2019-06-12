@@ -1,5 +1,7 @@
 ﻿using DevFramework.Business.DependencyResolver.Ninject;
 using DevFramework.MvcWebUI.Utilities.Infrastructure;
+using DevFramework.MvcWebUI.Utilities.Provider;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,8 @@ namespace DevFramework.MvcWebUI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //GlobalContext.Properties["UserName"] = "Mert";
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
         }

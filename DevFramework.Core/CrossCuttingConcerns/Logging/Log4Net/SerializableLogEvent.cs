@@ -10,7 +10,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net
     [Serializable]
     public class SerializableLogEvent
     {
-        LoggingEvent _loggingEvent;
+        private LoggingEvent _loggingEvent;
 
         public SerializableLogEvent(LoggingEvent loggingEvent)
         {

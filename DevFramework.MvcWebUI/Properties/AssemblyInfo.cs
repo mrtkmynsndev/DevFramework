@@ -1,7 +1,8 @@
-﻿using System.Reflection;
+﻿using System.Data.Entity.Infrastructure.Interception;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
+using DevFramework.Core.Aspects.Postsharp.LogAspects;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
@@ -13,6 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+//[assembly: LogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "DevFramework.Business.Concrete.Managers.*")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

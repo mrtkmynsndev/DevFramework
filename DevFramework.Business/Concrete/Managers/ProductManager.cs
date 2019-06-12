@@ -16,6 +16,7 @@ using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.LogAspects;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using DevFramework.Core.Aspects.Postsharp.ExceptionAspects;
 
 namespace DevFramework.Business.Concrete.Managers
 {
@@ -29,6 +30,7 @@ namespace DevFramework.Business.Concrete.Managers
 
         [FluentValidationAspect(typeof(ProductValidator), AspectPriority =1)]
         [CacheRemoveAsepect(typeof(MemoryCacheManager))]
+        [ExceptionLogAspect(typeof(DatabaseLogger))]
         public Product Add(Product entity)
         {
             //ValidatorTool.FluentValidate(new ProductValidator(), entity: entity);
@@ -36,12 +38,12 @@ namespace DevFramework.Business.Concrete.Managers
             return _productDal.Add(entity);
         }
 
+        [LogAspect(typeof(FileLogger))]
         public Product GetProductByID(int id)
         {
             return _productDal.Get(x => x.ProductId == id);
         }
 
-        [LogAspect(typeof(FileLogger))]
         [LogAspect(typeof(DatabaseLogger))]
         [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetProducts()
