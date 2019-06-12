@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DevFramework.Business.Abstract;
 using DevFramework.Entities.Concrete;
 using DevFramework.DataAccess.Abstract;
-using DevFramework.Core.CrossCuttingConcerns.FluentValidation;
+using DevFramework.Core.CrossCuttingConcerns.Validation.Fluent;
 using DevFramework.Business.ValidationRules.FluentValidation;
 using DevFramework.Core.Aspects.Postsharp;
 using System.Transactions;
@@ -14,6 +14,8 @@ using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using DevFramework.Core.Aspects.Postsharp.LogAspects;
+using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 
 namespace DevFramework.Business.Concrete.Managers
 {
@@ -39,6 +41,8 @@ namespace DevFramework.Business.Concrete.Managers
             return _productDal.Get(x => x.ProductId == id);
         }
 
+        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
         [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetProducts()
         {

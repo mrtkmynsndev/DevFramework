@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DevFramework.Core.CrossCuttingConcerns.FluentValidation;
+using DevFramework.Core.CrossCuttingConcerns.Validation.Fluent;
 using FluentValidation;
 using PostSharp.Aspects;
 
