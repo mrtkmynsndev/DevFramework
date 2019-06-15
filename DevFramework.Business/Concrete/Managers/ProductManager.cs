@@ -10,6 +10,7 @@ using DevFramework.Core.CrossCuttingConcerns.Validation.Fluent;
 using DevFramework.Business.ValidationRules.FluentValidation;
 using DevFramework.Core.Aspects.Postsharp;
 using System.Transactions;
+using DevFramework.Core.Aspects.Autofac.Validation;
 using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
@@ -22,13 +23,14 @@ namespace DevFramework.Business.Concrete.Managers
 {
     public class ProductManager : IProductService
     {
-        private IProductDal _productDal;
+        private readonly IProductDal _productDal;
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
         }
 
-        [FluentValidationAspect(typeof(ProductValidator), AspectPriority =1)]
+        //[FluentValidationAspect(typeof(ProductValidator), AspectPriority =1)]
+        [FluentValidationInterceptionAspect(typeof(ProductValidator))]
         [CacheRemoveAsepect(typeof(MemoryCacheManager))]
         [ExceptionLogAspect(typeof(DatabaseLogger))]
         public Product Add(Product entity)
@@ -37,6 +39,7 @@ namespace DevFramework.Business.Concrete.Managers
 
             return _productDal.Add(entity);
         }
+
 
         [LogAspect(typeof(FileLogger))]
         public Product GetProductByID(int id)
