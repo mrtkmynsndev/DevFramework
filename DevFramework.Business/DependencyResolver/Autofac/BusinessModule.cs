@@ -29,9 +29,9 @@ namespace DevFramework.Business.DependencyResolver.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
 
-            builder.RegisterType<DbContext>().As<NorthwindContext>();
-            builder.RegisterType<NHibernateProvider>().As<SqlServerProvider>();
-            builder.RegisterType(typeof(EfQueryableRepository<>)).As(typeof(IQueryableRepository<>));
+            builder.RegisterType<NorthwindContext>().As<DbContext>();
+            builder.RegisterType<SqlServerProvider>().As<NHibernateProvider>();
+           // builder.RegisterType(typeof(EfQueryableRepository<>)).As(typeof(IQueryableRepository<>));
 
         }
     }
