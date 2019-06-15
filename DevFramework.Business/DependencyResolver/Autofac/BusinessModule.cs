@@ -31,8 +31,13 @@ namespace DevFramework.Business.DependencyResolver.Autofac
 
             builder.RegisterType<NorthwindContext>().As<DbContext>();
             builder.RegisterType<SqlServerProvider>().As<NHibernateProvider>();
-           // builder.RegisterType(typeof(EfQueryableRepository<>)).As(typeof(IQueryableRepository<>));
-
+            //builder.RegisterType(typeof(EfQueryableRepository<>)).As(typeof(IQueryableRepository<>));
         }
+
+        //protected override void Load(ContainerBuilder builder)
+        //{
+        //    var businessAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+        //    builder.RegisterAssemblyTypes(businessAssembly).AsImplementedInterfaces().SingleInstance();
+        //}
     }
 }

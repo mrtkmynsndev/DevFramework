@@ -10,7 +10,10 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
+using Autofac.Core;
 using Autofac.Integration.Mvc;
+using DevFramework.Business.DependencyResolver.Autofac;
+using DevFramework.MvcWebUI.Utilities.DependencyResolver;
 
 namespace DevFramework.MvcWebUI
 {
@@ -26,10 +29,17 @@ namespace DevFramework.MvcWebUI
             //GlobalContext.Properties["UserName"] = "Mert";
 
             //ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
-            ContainerBuilder builder = new ContainerBuilder();
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterModule(new DevFramework.Business.DependencyResolver.Autofac.BusinessModule());
-            ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(builder.Build()));
+            //ContainerBuilder builder = new ContainerBuilder();
+            //builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            //builder.RegisterModule(new DevFramework.Business.DependencyResolver.Autofac.BusinessModule());
+            //ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(builder.Build()));
+
+            ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(
+                AutofacConfig.AddDependencyResolver(new IModule[]
+                {
+                    new DevFramework.Business.DependencyResolver.Autofac.BusinessModule(),
+                    new MvcModule(),
+                })));
         }
     }
 }

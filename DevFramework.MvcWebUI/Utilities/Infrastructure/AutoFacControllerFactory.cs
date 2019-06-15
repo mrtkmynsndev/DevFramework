@@ -10,7 +10,7 @@ namespace DevFramework.MvcWebUI.Utilities.Infrastructure
 {
     public class AutoFacControllerFactory : DefaultControllerFactory
     {
-        IContainer _container;
+        readonly IContainer _container;
 
         public AutoFacControllerFactory(IContainer container)
         {
