@@ -30,6 +30,8 @@ N-Tier Layered Architecture RoadMap
    - Microsoft Memory Cache Implementation
    - Log4Net Implementation
 - Aspect Oriented Programming - Aspects
+   - Postsharp
+   - Autofac
    - Validation Aspect Implementation
    - Transaction Aspect Implementation
    - Cache Aspect Implementation
@@ -60,3 +62,5 @@ N-Tier Layered Architecture RoadMap
 5. Entities Layer
    - Complex Type Implementation
    - Concrete Implementation
+6. WebUI Layer
+   - Controller Factory Implementation
