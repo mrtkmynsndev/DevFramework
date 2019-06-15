@@ -34,12 +34,17 @@ namespace DevFramework.MvcWebUI
             //builder.RegisterModule(new DevFramework.Business.DependencyResolver.Autofac.BusinessModule());
             //ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(builder.Build()));
 
-            ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(
-                AutofacConfig.AddDependencyResolver(new IModule[]
-                {
-                    new DevFramework.Business.DependencyResolver.Autofac.BusinessModule(),
-                    new MvcModule(),
-                })));
+            var controllerFactory = new MvcWebUiControllerFactory();
+            ControllerBuilder.Current.SetControllerFactory(
+                controllerFactory.CreateControllerFactory(typeof(AutoFacControllerFactory)));
+
+            //ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(
+            //    AutofacConfig.AddDependencyResolver(new IModule[]
+            //    {
+            //        new DevFramework.Business.DependencyResolver.Autofac.BusinessModule(),
+            //        new MvcModule(),
+            //    })));
+
         }
     }
 }

@@ -152,6 +152,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\DependencyResolver\MvcModule.cs" />
     <Compile Include="Utilities\Infrastructure\AutoFacControllerFactory.cs" />
+    <Compile Include="Utilities\Infrastructure\MvcWebUIControllerFactory.cs" />
     <Compile Include="Utilities\Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Utilities\Provider\HttpContextUserNameProvider.cs" />
   </ItemGroup>
