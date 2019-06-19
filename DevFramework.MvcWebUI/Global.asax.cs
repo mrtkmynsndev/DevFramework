@@ -36,7 +36,7 @@ namespace DevFramework.MvcWebUI
 
             var controllerFactory = new MvcWebUiControllerFactory();
             ControllerBuilder.Current.SetControllerFactory(
-                controllerFactory.CreateControllerFactory(typeof(AutoFacControllerFactory)));
+                controllerFactory.CreateControllerFactory(typeof(NinjectControllerFactory)));
 
             //ControllerBuilder.Current.SetControllerFactory(new AutoFacControllerFactory(
             //    AutofacConfig.AddDependencyResolver(new IModule[]

@@ -30,24 +30,23 @@ namespace DevFramework.Business.Concrete.Managers
         }
 
         //[FluentValidationAspect(typeof(ProductValidator), AspectPriority =1)]
-        [FluentValidationInterceptionAspect(typeof(ProductValidator))]
-        [CacheRemoveAsepect(typeof(MemoryCacheManager))]
-        [ExceptionLogAspect(typeof(DatabaseLogger))]
+        //[FluentValidationInterceptionAspect(typeof(ProductValidator))]
+        //[CacheRemoveAsepect(typeof(MemoryCacheManager))]
+        //[ExceptionLogAspect(typeof(DatabaseLogger))]
         public Product Add(Product entity)
         {
             //ValidatorTool.FluentValidate(new ProductValidator(), entity: entity);
-
             return _productDal.Add(entity);
         }
 
 
-        [LogAspect(typeof(FileLogger))]
+        //[LogAspect(typeof(FileLogger))]
         public Product GetProductByID(int id)
         {
             return _productDal.Get(x => x.ProductId == id);
         }
 
-        [LogAspect(typeof(DatabaseLogger))]
+        //[LogAspect(typeof(DatabaseLogger))]
         [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetProducts()
         {

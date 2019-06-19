@@ -34,6 +34,7 @@ namespace DevFramework.MvcWebUI.Controllers
                 ProductName = "Laptop",
             };
 
+
             _productService.Add(entity);
 
             return Json("Added", JsonRequestBehavior.AllowGet);
